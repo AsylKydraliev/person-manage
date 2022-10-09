@@ -1,0 +1,82 @@
+<div class="form">
+  <h1>Create new user</h1>
+  <mat-card>
+    <form (ngSubmit)="onSubmit()" #f=ngForm>
+      <div class="field-group">
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Name" required name="firstName" ngModel #firstName="ngModel">
+          <mat-error *ngIf="firstName.touched && firstName.hasError('required')">Name is required!</mat-error>
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Last name</mat-label>
+          <input matInput placeholder="Last name" required name="lastName" ngModel #lastName="ngModel">
+          <mat-error *ngIf="lastName.touched && lastName.hasError('required')">Last name is required!</mat-error>
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+      </div>
+
+      <div class="field-group">
+        <mat-form-field appearance="outline" color="primary" class="form-field">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="pat@example.com" required name="email" ngModel #email="ngModel">
+          <mat-error *ngIf="email.touched && email.hasError('required')">Email is required!</mat-error>
+          <mat-icon matSuffix>email</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Phone</mat-label>
+          <input matInput placeholder="+996 000 000 000" required name="phone" ngModel #phone="ngModel" maxlength="12">
+          <mat-error *ngIf="phone.touched && phone.hasError('required')">Phone is required!</mat-error>
+          <mat-icon matSuffix>phone</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Image URL</mat-label>
+          <input matInput placeholder="URL" required name="image" ngModel #image="ngModel">
+          <mat-error *ngIf="image.touched && image.hasError('required')">Image URL is required!</mat-error>
+          <mat-icon matSuffix>image</mat-icon>
+        </mat-form-field>
+      </div>
+
+      <div class="field-group">
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Card expire</mat-label>
+          <input matInput placeholder="00/00" required name="cardExpire" ngModel #cardExpire="ngModel">
+          <mat-error *ngIf="cardExpire.touched && cardExpire.hasError('required')">Card expire is required!</mat-error>
+          <mat-icon matSuffix>bank</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Card number</mat-label>
+          <input matInput placeholder="3586082982526703" type="number" required name="cardNumber" ngModel #cardNumber="ngModel">
+          <mat-error *ngIf="cardNumber.touched && cardNumber.hasError('required')">Card number is required!</mat-error>
+          <mat-icon matSuffix>number</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Card type</mat-label>
+          <mat-select name="cardType" required ngModel #cardType="ngModel">
+            <mat-option *ngFor="let type of cardTypes" [value]="type">{{ type }}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="cardType.touched && cardType.hasError('required')">Card type is required!</mat-error>
+        </mat-form-field>
+      </div>
+
+      <ng-template #btn>
+        <button
+          type="submit"
+          mat-raised-button
+          color="primary"
+          [disabled]="f.invalid"
+        >Create user
+        </button>
+      </ng-template>
+
+      <mat-progress-bar mode="indeterminate" *ngIf="loading else btn"></mat-progress-bar>
+    </form>
+  </mat-card>
+</div>
+

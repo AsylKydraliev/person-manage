@@ -1,0 +1,36 @@
+.example-container {
+  height: auto;
+  max-width: 100%;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  tr:hover {
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 3px 1px #b7b5b5;
+  }
+  td {
+    padding-right: 15px;
+  }
+  .name-head {
+    padding-left: 30px;
+  }
+  .name {
+    text-align: center;
+  }
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 13%;
+}
+
+.mat-elevation-z8 {
+  margin-bottom: 3rem;
+}

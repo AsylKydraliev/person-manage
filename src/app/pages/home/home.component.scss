@@ -1,3 +1,9 @@
 .base-table {
   padding: 0 5rem 3rem;
 }
+
+@media screen and (max-width: 900px) {
+  .base-table {
+    padding: 0 1rem 3rem;
+  }
+}

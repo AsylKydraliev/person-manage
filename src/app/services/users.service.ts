@@ -15,10 +15,6 @@ export class UsersService {
     return this.http.get<User[]>(environment.apiUrl);
   }
 
-  getUser(id: number) {
-    return this.http.get<User>(`${environment.apiUrl}/${id}`);
-  }
-
   addUser(userData: User) {
     return this.http.post<User>(environment.apiUrl, userData);
   }

@@ -28,9 +28,14 @@ table {
 }
 
 td, th {
-  width: 13%;
+  width: 14%;
 }
 
 .mat-elevation-z8 {
   margin-bottom: 3rem;
+}
+
+.btn-toggle {
+  text-align: right;
+  margin: 1rem 0 0;
 }

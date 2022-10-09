@@ -65,17 +65,13 @@
         </mat-form-field>
       </div>
 
-      <ng-template #btn>
-        <button
-          type="submit"
-          mat-raised-button
-          color="primary"
-          [disabled]="f.invalid"
-        >Create user
-        </button>
-      </ng-template>
-
-      <mat-progress-bar mode="indeterminate" *ngIf="loading else btn"></mat-progress-bar>
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary"
+        [disabled]="f.invalid"
+      >Create user
+      </button>
     </form>
   </mat-card>
 </div>

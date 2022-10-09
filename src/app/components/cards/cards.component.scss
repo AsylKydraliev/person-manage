@@ -1,0 +1,50 @@
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 1rem auto;
+  width: 85%;
+  mat-card {
+    width: 28%;
+    margin: 0.6rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+  }
+  mat-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
+  }
+}
+
+mat-card-actions {
+  text-align: center;
+  button {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .cards {
+    width: 100%;
+    margin: 0 auto;
+    mat-card {
+      width: 26%;
+    }
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .cards {
+    mat-card {
+      width: 41%;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cards {
+    mat-card {
+      width: 80%;
+    }
+  }
+}
+

@@ -25,6 +25,8 @@ export class TableComponent implements OnInit, OnDestroy{
     'delete',
   ];
   dataSource!: MatTableDataSource<User>;
+  toggleContent = true;
+  users: User[] | [] = [];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -34,11 +36,24 @@ export class TableComponent implements OnInit, OnDestroy{
   constructor(private usersService: UsersService) {}
 
   ngOnInit() {
+    this.checkContentInLocalStorage();
     this.getUsers();
+  }
+
+  checkContentInLocalStorage() {
+    const content = localStorage.getItem('content');
+    if(content === 'table') {
+      this.toggleContent = true;
+      localStorage.setItem('content', 'table');
+    } else {
+      localStorage.setItem('content', 'card');
+      this.toggleContent = false;
+    }
   }
 
   getUsers() {
     this.userSub = this.usersService.getUsers().subscribe((users: User[]) => {
+      this.users = users;
       this.dataSource = new MatTableDataSource(users);
       this.onPaginationAndSort();
     })
@@ -60,11 +75,19 @@ export class TableComponent implements OnInit, OnDestroy{
 
   onDeleteUser(id: number) {
     this.usersService.deleteUser(id).subscribe();
+    this.usersService.openSnackBar(id, `User id ${id} has been deleted`);
     this.getUsers();
   }
 
-  openSnackBar(id: number) {
-    this.usersService.openSnackBar(id, `User id ${id} has been deleted`);
+  onToggleTable() {
+    this.toggleContent = false;
+    localStorage.setItem('content', 'card');
+  }
+
+  onToggleCard() {
+    this.toggleContent = true;
+    localStorage.setItem('content', 'table');
+    this.getUsers();
   }
 
   ngOnDestroy() {

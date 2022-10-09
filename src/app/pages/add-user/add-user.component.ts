@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 })
 export class AddUserComponent implements OnInit {
   @ViewChild('f') form!: NgForm;
-  loading = false;
   cardTypes = [
     'jcb',
     'instapayment',
@@ -33,7 +32,6 @@ export class AddUserComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
-    this.loading = true;
     const formData = this.form.value;
     const userData: User = {
       firstName: formData.firstName,
@@ -51,7 +49,6 @@ export class AddUserComponent implements OnInit {
       if(data.id) {
         this.usersService.openSnackBar(data.id, `User id ${data.id} has been added`);
       }
-      this.loading = false;
     });
     void this.router.navigate(['/']);
   }

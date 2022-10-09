@@ -24,6 +24,7 @@ import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { NotFoundComponent } from './components/not-found.component';
+import { CardsComponent } from './components/cards/cards.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { NotFoundComponent } from './components/not-found.component';
     HomeComponent,
     TableComponent,
     AddUserComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,

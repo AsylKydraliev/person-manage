@@ -89,31 +89,6 @@
       }
     },
     {
-      "id": 20,
-      "firstName": "Lenna",
-      "lastName": "Renner",
-      "maidenName": "Schumm",
-      "age": 41,
-      "gender": "female",
-      "email": "aeatockj@psu.edu",
-      "phone": "+1 904 601 7177",
-      "username": "aeatockj",
-      "password": "szWAG6hc",
-      "birthDate": "1980-01-19",
-      "image": "https://robohash.org/ipsumutofficiis.png",
-      "bloodGroup": "O−",
-      "height": 175,
-      "weight": 68,
-      "eyeColor": "Green",
-      "bank": {
-        "cardExpire": "07/22",
-        "cardNumber": "3565173055875732",
-        "cardType": "jcb",
-        "currency": "Dollar",
-        "iban": "GT39 KL9Z CZYV XF26 UPYW SFPT H74U"
-      }
-    },
-    {
       "id": 21,
       "firstName": "Doyle",
       "lastName": "Ernser",
@@ -312,19 +287,6 @@
         "currency": "Yen",
         "iban": "IS23 8410 4605 1294 9479 5900 11"
       }
-    },
-    {
-      "firstName": "sadsdsadsadas",
-      "lastName": "dsdasd",
-      "email": "dssadas",
-      "phone": "dsdsds",
-      "image": "https://cdn-icons-png.flaticon.com/512/149/149071.png",
-      "bank": {
-        "cardExpire": "dsadas",
-        "cardNumber": 45456,
-        "cardType": "jcb"
-      },
-      "id": 30
     }
   ]
 }

@@ -14,11 +14,8 @@ table {
   td {
     padding-right: 15px;
   }
-  .name-head {
-    padding-left: 30px;
-  }
-  .name {
-    text-align: center;
+  .phone {
+    width: 20%;
   }
 }
 
@@ -28,7 +25,7 @@ table {
 }
 
 td, th {
-  width: 14%;
+  width: 13%;
 }
 
 .mat-elevation-z8 {
